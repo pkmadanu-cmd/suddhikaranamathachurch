@@ -1,0 +1,50 @@
+/* ChurchRecords certificate printing */
+.certificate-page{background:#eee7da}
+.certificate-workspace{max-width:1180px;margin:0 auto;padding:28px}
+.certificate-search-card{background:#fffaf1;border:1px solid var(--border);box-shadow:0 10px 30px rgba(46,38,26,.08);padding:22px;margin-bottom:22px}
+.certificate-search-row{display:flex;gap:12px;align-items:end;flex-wrap:wrap}
+.certificate-search-row .field{flex:1 1 360px}
+.certificate-search-row label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.certificate-search-row input{width:100%;padding:11px 13px;border:1px solid var(--border);border-radius:4px;background:#fff}
+.certificate-search-row button{padding:11px 18px;border:0;border-radius:4px;background:var(--burgundy);color:#fff;font-weight:700;cursor:pointer}
+.certificate-search-row button.secondary{background:var(--navy)}
+.certificate-search-message{margin:12px 0 0;color:var(--burgundy);font-size:13px;min-height:18px}
+.certificate-paper{width:min(100%,850px);min-height:1100px;margin:0 auto;background:#fffdf8;border:0;box-shadow:0 15px 45px rgba(46,38,26,.16);position:relative;padding:64px 68px 55px;color:#171513;overflow:hidden}
+/* Official certificate border — matching 1.pdf, gold only */
+.certificate-paper::after{content:'';position:absolute;inset:8.5mm;border:0.45mm solid #b08a43;box-shadow:inset 0 0 0 1.1mm #fffdf8, inset 0 0 0 1.55mm #b08a43;pointer-events:none;z-index:2}
+.certificate-paper::before{content:'✝';position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-family:Georgia,serif;font-size:300px;color:rgba(176,138,67,.035);z-index:0}
+.certificate-paper>*{position:relative;z-index:1}
+.certificate-ornament{height:2px;background:linear-gradient(90deg,transparent,#b08a43,transparent);margin:18px 0 30px}
+.certificate-title{font-family:Georgia,'Times New Roman',serif;font-size:38px;text-align:center;margin:0 0 18px;font-weight:700}
+.certificate-church{text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:700;letter-spacing:.04em}
+.certificate-subtitle{text-align:center;font-size:18px;margin-top:6px}
+.certificate-address{text-align:center;font-size:13px;margin-top:8px}
+.certificate-intro{font-size:12px;line-height:1.5;text-align:center;margin:10px auto 22px;max-width:680px}
+.certificate-grid{margin-top:34px}
+.certificate-line{display:grid;grid-template-columns:230px 20px 1fr;gap:8px;align-items:end;margin:0 0 16px;font-size:16px;min-height:28px}
+.certificate-line .label{font-weight:600}
+.certificate-line .value{min-height:26px;border-bottom:1px dotted #666;padding:2px 4px;font-weight:500}
+.certificate-two-col{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:25px}
+.certificate-column-title{text-align:center;font-family:Georgia,serif;font-size:17px;font-weight:700;margin-bottom:18px}
+.certificate-footnote{text-align:center;font-size:13px;margin:55px 0 0;line-height:1.5}
+.certificate-signatures{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;margin-top:78px;text-align:center;font-size:13px}
+.certificate-signature{padding-top:10px;border-top:1px solid #555}
+.certificate-actions{display:flex;justify-content:center;gap:10px;margin:18px auto 30px}
+.certificate-actions button{border:0;border-radius:4px;padding:10px 18px;cursor:pointer;font-weight:700}
+.certificate-actions .print{background:var(--burgundy);color:#fff}
+.certificate-actions .clear{background:#e9dfcd;color:var(--navy)}
+.certificate-note{font-size:12px;color:var(--muted);text-align:center;margin:0 0 18px}
+.certificate-sidebar-title{cursor:default}
+.certificate-subnav{padding:0 12px 12px}
+.certificate-subnav a{display:block;padding:9px 12px 9px 42px;color:#625b51;font-size:13px;border-left:2px solid transparent}
+.certificate-subnav a:hover,.certificate-subnav a.active{background:#f1e7d5;color:var(--burgundy);border-left-color:var(--gold);font-weight:700}
+@media(max-width:900px){.certificate-paper{padding:45px 35px}.certificate-line{grid-template-columns:190px 16px 1fr}.certificate-title{font-size:31px}.certificate-church{font-size:21px}}
+@media(max-width:650px){.certificate-workspace{padding:14px}.certificate-paper{padding:34px 22px;min-height:auto}.certificate-line{grid-template-columns:1fr;gap:3px;margin-bottom:13px}.certificate-line .colon{display:none}.certificate-two-col,.certificate-signatures{grid-template-columns:1fr;gap:22px}.certificate-signatures{margin-top:45px}.certificate-title{font-size:27px}.certificate-church{font-size:18px}.certificate-address{font-size:11px}}
+@media print{body{background:#fff!important}.topbar,.sidebar,.certificate-search-card,.certificate-actions,.certificate-note,.page-header{display:none!important}.app-layout{display:block;min-height:0}.dashboard-content.certificate-content{padding:0!important;margin:0!important}.certificate-workspace{padding:0;max-width:none}.certificate-paper{width:210mm;min-height:297mm;margin:0 auto;border:0;box-shadow:none;padding:18mm 18mm 14mm;background:#fff!important;page-break-after:always;box-sizing:border-box}
+.certificate-paper::after{inset:8.5mm;border:0.45mm solid #b08a43;box-shadow:inset 0 0 0 1.1mm #fff, inset 0 0 0 1.55mm #b08a43}.certificate-paper::before{display:block;content:'✝';position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-family:Georgia,'Times New Roman',serif;font-size:300px;line-height:1;color:rgba(176,138,67,.035);z-index:0;pointer-events:none}.certificate-title{font-size:32px}.certificate-church{font-size:22px}.certificate-address{font-size:11px}.certificate-line{font-size:13px;grid-template-columns:170px 14px 1fr;margin-bottom:11px}.certificate-footnote{margin-top:34px}.certificate-signatures{margin-top:55px;font-size:11px}@page{size:A4 portrait;margin:0}}
+@media print{.certificate-paper{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.marriage-certificate-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:16px;line-height:1.35}
+.marriage-certificate-table th{font-weight:700;text-align:center;padding:7px;font-size:17px}
+.marriage-certificate-table td{padding:7px;border-bottom:1px dotted #777;vertical-align:top}
+.marriage-certificate-table td:first-child{width:28%;font-weight:600;font-size:15px}
