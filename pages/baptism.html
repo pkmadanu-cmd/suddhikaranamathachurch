@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baptism Register - ChurchRecords</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/baptism.css">
+</head>
+<body class="app-page">
+  <header class="topbar">
+  <div class="brand">ChurchRecords</div>
+  <div class="topbar-church">
+    <div class="church-name">SUDDIKARANA MATHA CHURCH</div>
+    <div class="church-subtitle">OUR LADY OF PURIFICATION CHURCH</div>
+    <div class="church-diocese">DHARMARAM PARISH, DIOCESE OF NALGONDA</div>
+    <div class="church-address">Dharmaram Village & Post, Addaguduru Mandal, Yadadri Bhuvanagiri Dist. Telangana -508277, INDIA.</div>
+  </div>
+  <div class="user-area"><span id="userEmail">User</span><button id="logoutButton" class="logout-button">Logout</button></div>
+</header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+  <div class="sidebar-title"><span class="mini-cross">✝</span>ChurchRecords</div>
+  <nav class="side-nav" aria-label="Main navigation">
+    <a class="nav-item" href="../dashboard.html"><span class="nav-icon">⌂</span><span>Dashboard</span></a>
+    <a class="nav-item" href="family-card.html"><span class="nav-icon">♧</span><span>Family Card</span></a>
+    <a class="nav-item" href="family-card-id.html"><span class="nav-icon">▣</span><span>Family Card ID Search</span></a>
+    <a class="nav-item" href="mass-intentions.html"><span class="nav-icon">✝</span><span>Mass Intentions</span></a>
+    <a class="nav-item active" href="baptism.html"><span class="nav-icon">✣</span><span>Baptism</span></a>
+    <a class="nav-item" href="burial.html"><span class="nav-icon">✟</span><span>Burial</span></a>
+    <a class="nav-item" href="communion.html"><span class="nav-icon">✦</span><span>First Holy Communion</span></a>
+    <a class="nav-item" href="confirmation.html"><span class="nav-icon">✧</span><span>Confirmation</span></a>
+    <a class="nav-item" href="marriage.html"><span class="nav-icon">♢</span><span>Marriage</span></a>
+    <div class="sidebar-title certificate-sidebar-title"><span class="mini-cross">▤</span>Print Certificates</div>
+    <div class="certificate-subnav" aria-label="Certificate printing options">
+      <a href="baptism-certificate.html">Baptism Certificate</a>
+      <a href="burial-certificate.html">Burial Certificate</a>
+      <a href="communion-certificate.html">First Holy Communion Certificate</a>
+      <a href="confirmation-certificate.html">Confirmation Certificate</a>
+      <a href="marriage-certificate.html">Marriage Certificate</a>
+    </div>
+    <div class="sidebar-title certificate-sidebar-title accounts-sidebar-title"><span class="mini-cross">₹</span>Church Accounts</div>
+    <div class="certificate-subnav" aria-label="Church accounts options">
+      <a href="expenses.html">Monthly Church Expenses</a>
+      <a href="expense-print.html">Print Expense Sheet</a>
+    </div>
+    <div class="sidebar-title certificate-sidebar-title accounts-sidebar-title"><span class="mini-cross">▣</span>Family Card Collections</div>
+    <div class="certificate-subnav" aria-label="Family card collection options">
+      <a href="subscriptions.html">Monthly Subscription Collection</a>
+      <a href="subscription-print.html">Print Subscription Sheet</a>
+    </div>
+  </nav>
+  <div class="sidebar-bottom"><p>In service of the parish</p><span>✝</span></div>
+</aside>
+
+    <main class="dashboard-content baptism-page">
+      <div class="page-header baptism-page-header">
+        <div>
+          <div class="page-kicker">Parish Sacramental Records</div>
+          <h1>Baptism Register</h1>
+          <p>Record and maintain baptism entries for the parish.</p>
+        </div>
+        <div class="register-mark">✝</div>
+      </div>
+
+      <section class="baptism-form-card">
+        <div class="baptism-card-header">
+          <div>
+            <h2 id="formTitle">New Baptism Record</h2>
+            <p>Enter the details carefully as they should appear in the parish register.</p>
+          </div>
+          <div class="register-label">BAPTISM</div>
+        </div>
+
+        <form id="baptismForm" class="baptism-vertical-form">
+          <div class="baptism-vertical-field">
+            <label for="refNo">Ref No.</label>
+            <input type="text" id="refNo" required>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="placeOfBaptism">Place of Baptism</label>
+            <select id="placeOfBaptism" required>
+              <option value="Our Lady of Purification Church, Dharmaram" selected>Our Lady of Purification Church, Dharmaram</option>
+              <option value="Our Lady of Lourdes, Gattu Singaram">Our Lady of Lourdes, Gattu Singaram</option>
+              <option value="Annunciation Church, Chirra Guduru">Annunciation Church, Chirra Guduru</option>              
+            </select>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" id="dateOfBirth" required>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="dateOfBaptism">Date of Baptism</label>
+            <input type="date" id="dateOfBaptism" required>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="fatherName">Father’s Name</label>
+            <input type="text" id="fatherName">
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="motherName">Mother’s Name</label>
+            <input type="text" id="motherName">
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation">
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="residence">Residence</label>
+            <textarea id="residence" rows="3"></textarea>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="godFather">God Father</label>
+            <input type="text" id="godFather">
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="godMother">God Mother</label>
+            <input type="text" id="godMother">
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="minister">Minister</label>
+            <input type="text" id="minister">
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="confirmed">Confirmed</label>
+            <select id="confirmed">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+              <option value="Not Known">Not Known</option>
+            </select>
+          </div>
+
+          <div class="baptism-vertical-field">
+            <label for="married">Married</label>
+            <select id="married">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+
+          <div class="baptism-actions">
+            <button type="reset" id="resetButton" class="baptism-btn baptism-btn-light">Clear</button>
+            <button type="submit" id="saveBaptismBtn" class="baptism-btn baptism-btn-gold">Save Baptism Record</button>
+            <button type="button" id="updateBaptismBtn" class="baptism-btn baptism-btn-secondary" hidden>Update Record</button>
+            <button type="button" id="cancelEditBtn" class="baptism-btn baptism-btn-light" hidden>Cancel Edit</button>
+          </div>
+          <p id="formMessage" class="baptism-message"></p>
+        </form>
+      </section>
+
+      <section class="baptism-register-card">
+        <div class="register-header">
+          <div>
+            <div class="page-kicker">Parish Register</div>
+            <h2>Saved Baptism Records</h2>
+          </div>
+          <input type="search" id="baptismSearch" class="baptism-search" placeholder="Search name, Ref No., father or mother">
+        </div>
+
+        <div class="register-table-wrap">
+          <table class="baptism-table">
+            <thead>
+              <tr>
+                <th>Ref No.</th>
+                <th>Name</th>
+                <th>Date of Baptism</th>
+                <th>Date of Birth</th>
+                <th>Father</th>
+                <th>Mother</th>
+                <th>Minister</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="baptismList">
+              <tr><td colspan="8" class="register-empty">Loading baptism records...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="../js/baptism.js"></script>
+</body>
+</html>
