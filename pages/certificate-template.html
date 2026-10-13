@@ -1,0 +1,5 @@
+
+<script src="../js/uppercase-inputs.js"></script>
+<script>
+(function(){function fixPrintPlaces(){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const a=[];while(w.nextNode())a.push(w.currentNode);for(const n of a)n.nodeValue=n.nodeValue.replace(/Chirra\s+Guduru/gi,'Chirraguduru').replace(/Gattu\s+Singaram/gi,'Gattusingaram');}window.addEventListener('beforeprint',fixPrintPlaces);})();
+</script>
