@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChurchRecords | Data Backup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .backup-content{padding:28px;max-width:1050px;margin:0 auto;width:100%}.backup-panel{background:#fff;border:1px solid #e8e2d8;border-radius:16px;padding:26px;margin:18px 0;box-shadow:0 8px 24px rgba(40,30,15,.05)}.backup-panel h2{margin:0 0 10px;color:#253b31}.backup-panel p{line-height:1.65;color:#5f665f}.backup-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.backup-status{margin-top:16px;padding:12px 14px;border-radius:9px;background:#f5f3ee;color:#35453b;white-space:pre-wrap;display:none}.backup-warning{border-left:4px solid #bd8a38;padding:10px 14px;background:#fff8e9;border-radius:6px}.backup-file{display:block;margin:16px 0}.backup-back{display:inline-block;margin-bottom:16px;color:#455a4c}
+  </style>
+</head>
+<body class="app-page">
+  <header class="topbar">
+    <div class="brand">ChurchRecords</div>
+    <div class="topbar-church">
+      <div class="church-name">SUDDIKARANA MATHA CHURCH</div>
+      <div class="church-subtitle">OUR LADY OF PURIFICATION CHURCH</div>
+      <div class="church-diocese">DHARMARAM PARISH, DIOCESE OF NALGONDA</div>
+      <div class="church-address">Dharmaram Village &amp; Post, Addaguduru Mandal, Yadadri Bhuvanagiri Dist. Telangana -508277, INDIA.</div>
+    </div>
+    <div class="user-area"><span id="userEmail">User</span><button id="logoutButton" class="logout-button">Logout</button></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-title"><span class="mini-cross">✝</span>ChurchRecords</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../dashboard.html"><span class="nav-icon">⌂</span><span>Dashboard</span></a>
+        <a class="nav-item" href="./family-card.html"><span class="nav-icon">♧</span><span>Family Card</span></a>
+        <a class="nav-item" href="./family-card-id.html"><span class="nav-icon">▣</span><span>Family Card ID Search</span></a>
+        <a class="nav-item" href="./mass-intentions.html"><span class="nav-icon">✝</span><span>Mass Intentions</span></a>
+        <a class="nav-item" href="./baptism.html"><span class="nav-icon">✣</span><span>Baptism</span></a>
+        <a class="nav-item" href="./burial.html"><span class="nav-icon">✟</span><span>Burial</span></a>
+        <a class="nav-item" href="./communion.html"><span class="nav-icon">✦</span><span>First Holy Communion</span></a>
+        <a class="nav-item" href="./confirmation.html"><span class="nav-icon">✧</span><span>Confirmation</span></a>
+        <a class="nav-item" href="./marriage.html"><span class="nav-icon">♢</span><span>Marriage</span></a>
+        <div class="sidebar-title certificate-sidebar-title"><span class="mini-cross">▤</span>Print Certificates</div>
+        <div class="certificate-subnav" aria-label="Certificate printing options"><a href="./baptism-certificate.html">Baptism Certificate</a><a href="./burial-certificate.html">Burial Certificate</a><a href="./communion-certificate.html">First Holy Communion Certificate</a><a href="./confirmation-certificate.html">Confirmation Certificate</a><a href="./marriage-certificate.html">Marriage Certificate</a></div>
+        <div class="sidebar-title certificate-sidebar-title accounts-sidebar-title"><span class="mini-cross">₹</span>Church Accounts</div>
+        <div class="certificate-subnav"><a href="./expenses.html">Monthly Church Expenses</a><a href="./expense-print.html">Print Expense Sheet</a></div>
+        <div class="sidebar-title certificate-sidebar-title accounts-sidebar-title"><span class="mini-cross">▣</span>Family Card Collections</div>
+        <div class="certificate-subnav"><a href="./subscriptions.html">Monthly Subscription Collection</a><a href="./subscription-print.html">Print Subscription Sheet</a></div>
+      </nav>
+      <div class="sidebar-bottom"><p>In service of the parish</p><span>✝</span></div>
+    </aside>
+    <main class="dashboard-content backup-content">
+      <a class="backup-back" href="../dashboard.html">← Back to Dashboard</a>
+      <section class="welcome-panel"><div><p class="eyebrow">Parish Services</p><h1>Data Backup</h1><p>Export all parish records to a file or import records from a previous backup.</p></div><div class="welcome-cross">⇅</div></section>
+      <section class="backup-panel">
+        <h2>Export All Records</h2>
+        <p>Download a JSON backup containing Family Cards, Baptism, Burial, First Holy Communion, Confirmation, Marriage, Mass Intentions, Church Expenses, and Family Card Subscriptions.</p>
+        <p><strong>Recommended:</strong> make a backup regularly and store a copy somewhere safe, such as a USB drive or secure computer folder.</p>
+        <div class="backup-actions"><button id="exportButton" class="btn btn-gold" type="button">Download Backup File</button></div>
+      </section>
+      <section class="backup-panel">
+        <h2>Import / Restore Backup</h2>
+        <p>Select a backup JSON file previously exported by ChurchRecords. Records with matching document IDs will be replaced by the backup versions; other records will be added. Records not present in the backup will not be deleted.</p>
+        <div class="backup-warning"><strong>Please be careful:</strong> importing can replace current records that have the same IDs. Make a fresh backup before restoring.</div>
+        <label class="backup-file" for="backupFile"><strong>Choose backup file</strong></label>
+        <input id="backupFile" type="file" accept=".json,application/json">
+        <div class="backup-actions"><button id="importButton" class="btn btn-gold" type="button" disabled>Import Backup File</button></div>
+      </section>
+      <div id="backupStatus" class="backup-status" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+  <script type="module" src="../js/data-backup.js"></script>
+<script>
+(function(){function fixPrintPlaces(){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const a=[];while(w.nextNode())a.push(w.currentNode);for(const n of a)n.nodeValue=n.nodeValue.replace(/Chirra\s+Guduru/gi,'Chirraguduru').replace(/Gattu\s+Singaram/gi,'Gattusingaram');}window.addEventListener('beforeprint',fixPrintPlaces);})();
+</script>
+</body>
+</html>
